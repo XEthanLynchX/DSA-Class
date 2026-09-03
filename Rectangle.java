@@ -41,19 +41,26 @@ public class Rectangle {
     public double getPerimeter(){ 
           return 2 * (this.width + this.height);
     }
-    // Method to print a comprehensive list of details about the rectangle
+
     public void printRectangle(String objectName){ 
         // Determine whether units should be plural or not 
         String widthWord = (this.width == 1.0) ? "unit" : "units";
         String heightWord = (this.height == 1.0) ? "unit" : "units";
+        
+        System.out.println("\nRectangle " + objectName + " is "+ this.width + " "+ widthWord +" wide and " + this.height + " " + heightWord + " high.");
+    }
+
+    // Method to print a comprehensive list of details about the rectangle
+    public void rectangleDetails(String objectName){ 
+        
         //Comprehensive list of rectangle details 
         System.out.println("\n" + objectName + ":");
         System.err.println("------------");
-        System.out.println("Width: " + getWidth());
-        System.out.println("Height: " + getHeight());
-        System.out.println("Area: " + getArea());
-        System.out.println("Perimeter: " + getPerimeter() );
-        System.out.println("\nRectangle " + objectName + " is "+ this.width + " "+ widthWord +" wide and " + this.height + " " + heightWord + " high.");
+        System.out.printf("%-20s %.2f%n", "getWidth:", getWidth());
+        System.out.printf("%-20s %.2f%n", "getHeight:", getHeight());
+        System.out.printf("%-20s %.2f%n", "getArea:", getArea());
+        System.out.printf("%-20s %.2f%n", "getPerimeter():", getPerimeter());
+        this.printRectangle(objectName);
     }
 
 
